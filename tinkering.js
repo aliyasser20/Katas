@@ -1,8 +1,9 @@
-myObject = {  };
+let board = [1, 0, 1];
 
-for(i = 0; i < 2; i++){
-  myObject['propa' + i] = 1;
-  // myObject.propB + i = bar;
-};
+let sum = board.reduce(function(accumulator, currentValue) {
+  return accumulator + currentValue;
+}); 
 
-console.log(myObject);
+let summm = board[5];
+
+console.log(summm);
