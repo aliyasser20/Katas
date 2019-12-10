@@ -1,9 +1,9 @@
-let board = [1, 0, 1];
+const board = [1, 0, 1];
 
-let sum = board.reduce(function(accumulator, currentValue) {
+const sum = board.reduce(function(accumulator, currentValue) {
   return accumulator + currentValue;
-}); 
+});
 
-let summm = board[5];
+const summm = board[5];
 
 console.log(summm);

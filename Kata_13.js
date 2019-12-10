@@ -1,9 +1,9 @@
 const urlDecode = function(text) {
-  let encodedObject = {};
-  let arrayOfKeys = [];
-  let arrayOfValues = [];
+  const encodedObject = {};
+  const arrayOfKeys = [];
+  const arrayOfValues = [];
   let loopCompleted = false;
-  let regularExpression = /%20/g;
+  const regularExpression = /%20/g;
 
   // Create an array for keys and an array for values
   while (loopCompleted === false) {
@@ -19,6 +19,8 @@ const urlDecode = function(text) {
           text = text.substring(i + 1);
           i = 0;
           break;
+        default:
+          break;
       }
 
       if (i + 1 === text.length) {
@@ -27,12 +29,14 @@ const urlDecode = function(text) {
       }
     }
   }
-  
+
   // Convert all %20 to spaces for keys and values
   for (let i = 0; i < arrayOfKeys.length; i++) {
-    let keyString = arrayOfKeys[i].toString().replace(regularExpression, " ");
+    const keyString = arrayOfKeys[i].toString().replace(regularExpression, " ");
     arrayOfKeys[i] = keyString;
-    let valueString = arrayOfValues[i].toString().replace(regularExpression, " ");
+    const valueString = arrayOfValues[i]
+      .toString()
+      .replace(regularExpression, " ");
     arrayOfValues[i] = valueString;
   }
 

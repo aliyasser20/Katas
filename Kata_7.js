@@ -1,4 +1,4 @@
-let camelCase = function(input) {
+const camelCase = function(input) {
   let output = "";
 
   for (let i = 0; i < input.length; i++) {
@@ -12,7 +12,7 @@ let camelCase = function(input) {
     }
   }
 
-  return output; 
+  return output;
 };
 
 console.log(camelCase("this is a string"));

@@ -1,11 +1,11 @@
-let whiteQueen = [0, 5];
-let blackQueen = [5, 0];
-let generatedBoard = generateBoard(whiteQueen, blackQueen);
+const whiteQueen = [0, 5];
+const blackQueen = [5, 0];
+const generatedBoard = generateBoard(whiteQueen, blackQueen);
 
 function generateBoard(whiteQueen, blackQueen) {
-  let boardUnderGeneration = [];
+  const boardUnderGeneration = [];
   for (let i = 0; i < 8; i++) {
-    let rowUnderGeneration = [];
+    const rowUnderGeneration = [];
     for (let j = 0; j < 8; j++) {
       if (i === whiteQueen[0] && j === whiteQueen[1]) {
         rowUnderGeneration.push(1);
@@ -20,13 +20,16 @@ function generateBoard(whiteQueen, blackQueen) {
   return boardUnderGeneration;
 }
 
-let queenThreat = function(generatedBoard) {
-  let output = undefined;
+const queenThreat = function(generatedBoard) {
+  let output;
   // Check rows and columns
   while (output === undefined) {
     // Check each row
     for (let i = 0; i < 8; i++) {
-      let sumRows = generatedBoard[i].reduce(function(accumulator, currentValue) {
+      const sumRows = generatedBoard[i].reduce(function(
+        accumulator,
+        currentValue
+      ) {
         return accumulator + currentValue;
       });
       if (sumRows === 2) {
@@ -43,7 +46,7 @@ let queenThreat = function(generatedBoard) {
         output = true;
       }
     }
-    if (output != true) {
+    if (output !== true) {
       output = false;
     }
   }
@@ -51,7 +54,7 @@ let queenThreat = function(generatedBoard) {
   for (let x = 0; x < 7; x++) {
     let sumDiagonals = 0;
     for (let i = 0; i < 8; i++) {
-      if ((i + x) < 8 && (i + x) >= 0) {
+      if (i + x < 8 && i + x >= 0) {
         sumDiagonals += generatedBoard[i][i + x];
       }
     }
@@ -63,7 +66,7 @@ let queenThreat = function(generatedBoard) {
   for (let x = 1; x < 7; x++) {
     let sumDiagonals = 0;
     for (let i = 0; i < 8; i++) {
-      if ((i + x) < 8 && (i + x) >= 0) {
+      if (i + x < 8 && i + x >= 0) {
         sumDiagonals += generatedBoard[i + x][i];
       }
     }
@@ -72,10 +75,10 @@ let queenThreat = function(generatedBoard) {
     }
   }
   // Check diagonals /// Top
-  for (let x = 7; x > 0; x = x - 1) {
+  for (let x = 7; x > 0; x -= 1) {
     let sumDiagonals = 0;
     for (let i = 0; i < 8; i++) {
-      if ((x - i) < 8 && (x - i) >= 0) {
+      if (x - i < 8 && x - i >= 0) {
         sumDiagonals += generatedBoard[i][x - i];
       }
     }
@@ -86,8 +89,8 @@ let queenThreat = function(generatedBoard) {
   // Check diagonals /// Bottom
   for (let x = 8; x < 13; x++) {
     let sumDiagonals = 0;
-    for (let i = 7; i > 0; i = i - 1) {
-      if ((x - i) < 8 && (x - i) >= 0) {
+    for (let i = 7; i > 0; i -= 1) {
+      if (x - i < 8 && x - i >= 0) {
         sumDiagonals += generatedBoard[x - i][i];
       }
     }
@@ -96,7 +99,7 @@ let queenThreat = function(generatedBoard) {
     }
   }
   return output;
-}
+};
 
 console.log(generatedBoard);
 console.log(queenThreat(generatedBoard));
