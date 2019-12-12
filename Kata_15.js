@@ -1,8 +1,7 @@
 const whiteQueen = [0, 5];
 const blackQueen = [5, 0];
-const generatedBoard = generateBoard(whiteQueen, blackQueen);
 
-function generateBoard(whiteQueen, blackQueen) {
+function generateBoard() {
   const boardUnderGeneration = [];
   for (let i = 0; i < 8; i++) {
     const rowUnderGeneration = [];
@@ -20,7 +19,9 @@ function generateBoard(whiteQueen, blackQueen) {
   return boardUnderGeneration;
 }
 
-const queenThreat = function(generatedBoard) {
+const generatedBoard = generateBoard(whiteQueen, blackQueen);
+
+const queenThreat = function() {
   let output;
   // Check rows and columns
   while (output === undefined) {
@@ -102,4 +103,4 @@ const queenThreat = function(generatedBoard) {
 };
 
 console.log(generatedBoard);
-console.log(queenThreat(generatedBoard));
+console.log(queenThreat());

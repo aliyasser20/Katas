@@ -5,6 +5,7 @@ let answer = 0;
 let attempts = 0;
 const previousAnswers = [];
 
+// eslint-disable-next-line eqeqeq
 while (answer != randomNumber) {
   answer = prompt("Guess a number: ");
   let isNumber;
@@ -40,6 +41,7 @@ while (answer != randomNumber) {
         attempts += 1;
         previousAnswers.push(answer);
         console.log("Too Low!");
+        // eslint-disable-next-line eqeqeq
       } else if (answer == randomNumber) {
         attempts += 1;
         console.log(`You got it. You took ${attempts} attempts!`);

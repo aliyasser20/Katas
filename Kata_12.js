@@ -118,31 +118,22 @@ const makeCase = function(input, givenCase) {
     switch (givenCase) {
       case "camel":
         return makeCamelCase(input);
-        break;
       case "pascal":
         return makePascalCase(input);
-        break;
       case "snake":
         return makeSnakeCase(input);
-        break;
       case "kebab":
         return makeKebabCase(input);
-        break;
       case "title":
         return makeTitleCase(input);
-        break;
       case "vowel":
         return makeVowelCase(input);
-        break;
       case "consonant":
         return makeConsonantCase(input);
-        break;
       case "upper":
         return makeUpperCase(input);
-        break;
       case "lower":
         return makeLowerCase(input);
-        break;
       default:
         break;
     }
